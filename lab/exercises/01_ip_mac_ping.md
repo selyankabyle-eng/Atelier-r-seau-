@@ -35,18 +35,18 @@ sur la ligne `inet` se trouvent l'**adresse IP** et le **masque** (après le `/`
 
 | Information        | Valeur pour le client |
 | ------------------ | --------------------- |
-| Nom de l'interface | …                     |
-| Adresse MAC        | …                     |
-| Adresse IP         | …                     |
-| Masque (notation `/`) | …                  |
-| Adresse du réseau  | …                     |
+| Nom de l'interface | …eth0if34             |
+| Adresse MAC        | …be:84:19:89:8f:32    |
+| Adresse IP         | …172.20.1.50       |
+| Masque (notation `/`) | …        /24          |
+| Adresse du réseau  | … 172.20.1.0                    |
 
 **Question A.2.** Le masque est `/24`. Combien de machines différentes peut-on placer dans ce réseau ?
 (Indice : le dernier nombre de l'adresse peut varier de 0 à 255, mais 2 valeurs sont réservées.)
 
 > 💬 **Votre réponse :**
 >
-> _Remplacez ce texte par votre réponse._
+> _254 machines._
 
 ### Étape 2 — Ma passerelle
 
@@ -65,7 +65,7 @@ ip route
 
 > 💬 **Votre réponse :**
 >
-> _Remplacez ce texte par votre réponse._
+> _c'est le routeur et l'adresse est 172.20.1.50 ._
 
 ---
 
@@ -104,7 +104,7 @@ eu besoin de cette information **avant** de pouvoir envoyer le ping ?
 
 > 💬 **Votre réponse :**
 >
-> _Remplacez ce texte par votre réponse._
+> _on voit l'adresse ip du dhcp ainsi que sont adresse mac qui lui est associer il a besoin de cette information pour contruire la trame car dans un reseau local les clients ne voient que les adresse mac ._
 
 ### Étape 5 — Joindre une machine d'un autre réseau
 
@@ -121,7 +121,7 @@ a-t-il appris la MAC ? Expliquez pourquoi, en vous aidant de la fiche théorique
 
 > 💬 **Votre réponse :**
 >
-> _Remplacez ce texte par votre réponse._
+> _il a appris l'adresse mac depuis l'ip du routeur ._
 
 ---
 
@@ -141,7 +141,7 @@ cette différence ? (Indice : chaque routeur traversé diminue le TTL de 1.)
 
 > 💬 **Votre réponse :**
 >
-> _Remplacez ce texte par votre réponse._
+> _Pour le ping vers le routeur le TTL est de 64 et pour le site web il est de 63 la différence ce justifie par le fait qu'on est besoin de passer a travers un routeur pour atteindre le site web qui ce trouve lui sur un autre réseau donc cela réduit le TTL de 1 car on passe par un routeur d'ou le 63 pour le site web._
 
 ### Étape 7 — traceroute
 
@@ -158,7 +158,7 @@ Dessinez (en texte) le chemin suivi : `client → … → internet`.
 
 > 💬 **Votre réponse :**
 >
-> _Remplacez ce texte par votre réponse._
+> _Il y a un saut et l'adresse du saut est celui du routeur 172.20.1.254 soit client > routeur > internet._
 
 ### Étape 8 — Le lab est isolé
 
@@ -172,7 +172,7 @@ ping -c 2 -W 2 8.8.8.8
 
 > 💬 **Votre réponse :**
 >
-> _Remplacez ce texte par votre réponse._
+> _il est écrit injoignable car le routeur n'a pas de paserelle vers l'exterieur et n'est donc pas relier a internet ce qui fait que ping le dns de google est impossible et garde le réseau isolé ._
 
 ---
 
